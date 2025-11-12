@@ -11,8 +11,9 @@ header{
     background-color: lightblue;
     display: flex;
    
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 50px;
     /* text-align: center; */
 }
 header .logo{
