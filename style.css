@@ -21,3 +21,42 @@ header .logo{
     width: 25px;
 
 }
+nav 
+{
+    height: 8vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.781);
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+nav .links
+{
+    display: flex;
+    text-decoration: none;
+    gap: 60px;
+    margin-left: 20px;
+}
+nav .btn button
+{
+    display: flex;
+    margin-right: 30px;
+    background-color: #007bff;
+    color: white;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+}
+nav .links a:hover
+{
+    text-decoration: underline;
+    color: azure;
+}
+nav .btn button:hover{
+    text-decoration: underline;
+    color: brown;
+    cursor: pointer;
+}
+
