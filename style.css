@@ -29,6 +29,8 @@ nav
     display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
  
 }
 nav .links
@@ -37,6 +39,7 @@ nav .links
     text-decoration: none;
     gap: 60px;
     margin-left: 20px;
+    
 }
 nav .btn button
 {
@@ -59,4 +62,39 @@ nav .btn button:hover{
     color: brown;
     cursor: pointer;
 }
+main article
+{
+    /* margin-top: 12px; */
+    background-color: blueviolet;
+    height: 50vh;
+    /* background-color: blueviolet; background-image: url(http://bmsec.ac.in/assets/images/si/BMSCE.png); */
+}
+article .img img
+{
+   padding: 20px 60px;
+   position: relative;
+   z-index: 1;
+   float: left;
+}
+.click
+{
+    display: flex;
+    justify-content: space-around;
+}
 
+.click .imp button{
+    margin: 15px 13px;
+    padding: 3px 5px;
+    border-radius: 15px;
+    border: 0.5px solid black;
+}
+.click .search input{
+    margin: 15px 13px;
+    padding: 3px 5px;
+    border: 0.5px solid black;
+}
+.click .imp button:hover{
+cursor: pointer;
+text-decoration: underline;
+color: red;
+}
