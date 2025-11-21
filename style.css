@@ -94,7 +94,47 @@ article .img img
     border: 0.5px solid black;
 }
 .click .imp button:hover{
-cursor: pointer;
+/* cursor: pointer; */
 text-decoration: underline;
 color: red;
+}
+body{
+    height: 1333px;
+}
+.cards
+{
+    display: grid;
+    grid-template-columns: 35vw 35vw 35vw;
+    grid-template-rows: 65vh;
+    /* border: 2px solid black; */
+}
+.card1
+{
+    margin: 12px 15px;
+    padding: 12px 13px;
+    height: 45vh;
+    width: 25vw;
+    border: 2px solid black;
+}
+.card2
+{
+    margin: 12px 15px;
+    padding: 12px 13px;
+    height: 45vh;
+    width: 25vw;
+    border: 2px solid black;
+}
+.card3
+{
+    margin: 12px 15px 16px;
+    padding-right: 15px;
+    padding: 12px 13px;
+    height: 45vh;
+    width: 25vw;
+    border: 2px solid black;
+}
+.more
+{
+    text-align: end;
+    margin-right: 25px;
 }
