@@ -1,140 +1,233 @@
-*
-{
-    margin: 0;
-    padding: 0;
+/* ---------- Reset & base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-header{
-    height: 5vh;
-    width: 100%;
-    background-color: lightblue;
-    display: flex;
-   
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    /* text-align: center; */
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #222;
 }
-header .logo{
-    background-image: url(http://bmsec.ac.in/assets/images/si/BMSCE.png);
-    width: 25px;
 
+/* ---------- Header ---------- */
+header {
+  width: 100%;
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
 }
-nav 
-{
-    height: 8vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.781);
-    display: flex;
+
+/* Logo image + title */
+header .logo img {
+  width: 36px;            /* stable size */
+  height: auto;
+  display: block;
+}
+header span {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+}
+
+/* ---------- Sticky Nav ---------- */
+nav {
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  padding: 10px 16px;
+  position: sticky;       /* keeps nav at top while scrolling */
   top: 0;
- 
-}
-nav .links
-{
-    display: flex;
-    text-decoration: none;
-    gap: 60px;
-    margin-left: 20px;
-    
-}
-nav .btn button
-{
-    display: flex;
-    margin-right: 30px;
-    background-color: #007bff;
-    color: white;
-    justify-content: center;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-}
-nav .links a:hover
-{
-    text-decoration: underline;
-    color: azure;
-}
-nav .btn button:hover{
-    text-decoration: underline;
-    color: brown;
-    cursor: pointer;
-}
-main article
-{
-    /* margin-top: 12px; */
-    background-color: blueviolet;
-    height: 50vh;
-    /* background-color: blueviolet; background-image: url(http://bmsec.ac.in/assets/images/si/BMSCE.png); */
-}
-article .img img
-{
-   padding: 20px 60px;
-   position: relative;
-   z-index: 1;
-   float: left;
-}
-.click
-{
-    display: flex;
-    justify-content: space-around;
+  z-index: 9999;          /* above other content */
 }
 
-.click .imp button{
-    margin: 15px 13px;
-    padding: 3px 5px;
-    border-radius: 15px;
-    border: 0.5px solid black;
+/* allow links to wrap when space is tight */
+nav .links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.click .search input{
-    margin: 15px 13px;
-    padding: 3px 5px;
-    border: 0.5px solid black;
+
+nav .links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 4px;
+  font-size: 0.95rem;
 }
-.click .imp button:hover{
-/* cursor: pointer; */
-text-decoration: underline;
-color: red;
+
+nav .links a:hover {
+  text-decoration: underline;
+  color: #eaeaea;
 }
-body{
-    height: 1333px;
+
+nav .btn {
+  display: flex;
+  align-items: center;
 }
-.cards
-{
-    display: grid;
-    grid-template-columns: 35vw 35vw 35vw;
-    grid-template-rows: 65vh;
-    /* border: 2px solid black; */
+nav .btn button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
 }
-.card1
-{
-    margin: 12px 15px;
-    padding: 12px 13px;
-    height: 45vh;
-    width: 25vw;
-    border: 2px solid black;
+nav .btn button:hover {
+  opacity: 0.95;
 }
-.card2
-{
-    margin: 12px 15px;
-    padding: 12px 13px;
-    height: 45vh;
-    width: 25vw;
-    border: 2px solid black;
+
+/* ---------- Main article / hero ---------- */
+main {
+  padding: 18px 16px;
 }
-.card3
-{
-    margin: 12px 15px 16px;
-    padding-right: 15px;
-    padding: 12px 13px;
-    height: 45vh;
-    width: 25vw;
-    border: 2px solid black;
+
+main article {
+  background: linear-gradient(180deg, #b26efd22, #b26efd44);
+  padding: 18px;
+  border-radius: 10px;
+  overflow: hidden;   /* keeps floats inside */
+  display: flow-root; /* contain floats reliably */
 }
-.more
-{
-    text-align: end;
-    margin-right: 25px;
+
+/* hero image & text */
+article .img {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  flex-wrap: wrap;    /* wrap on small screens */
+}
+
+article .img img {
+  width: clamp(140px, 28vw, 320px); /* scales nicely */
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+article .img h1 {
+  margin-top: 6px;
+  font-size: 1.6rem;
+}
+article .img p {
+  margin-top: 8px;
+  max-width: 68ch;
+  text-align: left;
+}
+
+/* ---------- Buttons + search row ---------- */
+.click {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.click .imp {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.click .imp button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #2222;
+  cursor: pointer;
+  background: #fff;
+}
+
+.click .search input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
+/* ---------- Cards grid (responsive & consistent) ---------- */
+.cards {
+  margin: 18px 16px;
+  display: grid;
+  gap: 16px;
+  /* fluid columns with minimum card width of 240px */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+}
+
+/* each card keeps a consistent visual height using aspect-ratio */
+.cards > div {
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 220px;
+  aspect-ratio: 4 / 3; /* keeps card dimensions balanced */
+  overflow: hidden;
+}
+
+/* small visual adjustment for very short screens */
+@media (max-height: 600px) {
+  .cards > div {
+    min-height: 180px;
+    aspect-ratio: auto;
+  }
+}
+
+/* More link alignment */
+.more {
+  margin: 8px 16px 36px;
+  text-align: right;
+}
+
+/* ---------- Small screens adjustments ---------- */
+@media (max-width: 900px) {
+  article .img p { max-width: 55ch; }
+}
+
+@media (max-width: 600px) {
+  header { padding: 8px 12px; gap: 8px; }
+  header span { font-size: 0.95rem; }
+
+  nav {
+    padding: 10px 12px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  nav .links { gap: 12px; }
+
+  article .img {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article .img p {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .click {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .click .imp button,
+  .click .search input {
+    width: 100%;
+  }
 }
